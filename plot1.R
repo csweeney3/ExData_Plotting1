@@ -5,6 +5,9 @@ PowerDS$Time <-as.character(PowerDS$Time)
 PowerDS$DateTime <-paste(PowerDS$Date, PowerDS$Time)
 PowerDS$DateTime <- strptime(PowerDS$DateTime , format = "%d/%m/%Y %H:%M:%S")
 
+
+PowerDS$Global_active_power <- numeric(PowerDS$Global_active_power)
+
 png("plot1.png")
 
 hist(as.numeric(PowerDS$Global_active_power),col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)")
